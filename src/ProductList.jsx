@@ -254,6 +254,13 @@ function ProductList({ onHomeClick }) {
 
     const handleContinueShopping = (e) => {
         e.preventDefault();
+        const updatedAddedToCart = {};
+
+        CartItems.forEach((item) => {
+            updatedAddedToCart[item.name] = true;
+        });
+    
+        setAddedToCart(updatedAddedToCart);
         setShowCart(false);
     };
     const handleAddToCart = (product) => {
